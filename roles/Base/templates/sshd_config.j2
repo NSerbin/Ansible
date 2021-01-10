@@ -1,0 +1,31 @@
+Port 22
+Protocol 2
+PrintMOTD no
+# Authentication:
+AuthenticationMethods publickey
+ChallengeResponseAuthentication no
+ClientAliveInterval 120
+HostbasedAuthentication no
+LoginGraceTime 120
+MaxAuthTries 3
+PermitEmptyPasswords no
+PermitRootLogin no
+PubkeyAuthentication yes
+StrictModes yes
+UsePAM yes
+
+# Security
+HostKey /etc/ssh/ssh_host_dsa_key
+HostKey /etc/ssh/ssh_host_ecdsa_key
+HostKey /etc/ssh/ssh_host_ed25519_key
+HostKey /etc/ssh/ssh_host_rsa_key
+IgnoreRhosts yes
+
+# Misc. options
+AcceptEnv LANG LC_*
+TCPKeepAlive yes
+Subsystem sftp {{ sftp_path }}
+
+# Logging
+SyslogFacility AUTH
+LogLevel INFO

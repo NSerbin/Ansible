@@ -1,0 +1,76 @@
+- name: Install Programs
+  apt:
+    name:
+      - docker-ce
+      - flameshot
+      - gimp
+      - gtkpod 
+      - hplip
+      - hplip-gui
+      - joplin
+      - lollypop
+      - lutris
+      - obs-studio
+      - remmina
+      - virtualbox
+      - virtualbox-ext-pack
+      - wine
+      - winetricks
+      - xsane
+    state: latest
+
+- name: Copy AES-ENCRYPT
+  copy:
+    src: files/AESCrypt-GUI-3.tar.xz
+    dest: /home/Downloads
+    owner: koopernic
+    group: koopernic
+    mode: 0755
+- name: Install AES-ENCRYPT
+  unarchive:
+    src: files/AESCrypt-GUI-3.tar.xz
+    dest: /home/Downloads
+    remote_src: yes
+    mode: 0755
+    owner: koopernic
+    group: koopernic
+- name: Install POSTMAN
+  unarchive:
+    src: https://dl.pstmn.io/download/latest/linux64
+    dest: /home/koopernic/Downloads
+    remote_src: yes
+    mode: 0755
+    owner: koopernic
+    group: koopernic
+
+- name: Install Bitwarden
+  apt:
+    deb: https://vault.bitwarden.com/download/?app=desktop&platform=linux&variant=deb
+       
+- name: Install Discord
+  apt:
+    deb: https://discord.com/api/download?platform=linux&format=deb
+       
+- name: Install MegaSYNC
+  apt:
+    deb: https://mega.nz/linux/MEGAsync/Debian_10.0/amd64/megasync_4.3.8-1.1_amd64.deb
+       
+- name: Install Steam
+  apt:
+    deb: https://steamcdn-a.akamaihd.net/client/installer/steam.deb
+       
+- name: Install Slack
+  apt:
+    deb: https://downloads.slack-edge.com/linux_releases/slack-desktop-4.12.0-amd64.deb    
+       
+- name: Install Visual Studio Code
+  apt:
+    deb: https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
+       
+- name: Install WPS Office
+  apt:
+    deb: https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/9719/wps-office_11.1.0.9719.XA_amd64.deb
+
+- name: Install Zoom
+  apt:
+    deb: https://zoom.us/client/latest/zoom_amd64.deb

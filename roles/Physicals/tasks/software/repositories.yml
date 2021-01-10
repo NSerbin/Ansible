@@ -1,0 +1,29 @@
+- name: Adding Docker Apt signing key
+  apt_key:
+    url: https://download.docker.com/linux/debian/gpg
+    state: present
+    keyring: /etc/apt/trusted.gpg.d/docker.gpg
+- name: Add Docker Repository
+  apt_repository:
+    repo: deb [arch=amd64] https://download.docker.com/linux/debian buster stable
+    state: present
+    filename: docker
+    update_cache: true
+- name: Adding Lollypop Apt signing key
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: 8FAD14A04A8E87F23FB5653BDBA501177AA84500
+- name: Add Lollypop Repository
+  apt_repository:
+    repo: deb http://ppa.launchpad.net/gnumdk/lollypop/ubuntu bionic main 
+    state: present
+    filename: lollypop
+    update_cache: true
+- name: Add Lollypop src Repository
+  apt_repository:
+    repo: deb-src http://ppa.launchpad.net/gnumdk/lollypop/ubuntu bionic main 
+    state: present
+- name: Add Lutris Repository
+  apt_repository:
+    repo: 'ppa:lutris-team/lutris'
+    state: present

@@ -1,0 +1,21 @@
+- name: Install Utilities
+  apt:
+    name: 
+      - apt-transport-https
+      - brave-browser
+      - chromium
+      - curl
+      - dolphin
+      - gnupg
+      - gnome-terminal
+      - gparted
+      - mariadb-server
+      - p7zip-full
+      - p7zip-rar
+      - stacer
+      - wget
+      - zsh
+    state: latest
+    notify:
+      - Start MariaDB
+      - Start NTP 

@@ -1,0 +1,15 @@
+# Run Roles
+- hosts: all
+  become: true
+  roles:
+    - Base
+
+- hosts: Physicals
+  become: true
+  roles:
+     - Physicals
+
+- hosts: Whonix
+  become: true
+  roles:
+     - Whonix

@@ -1,0 +1,17 @@
+[VirtualMachines]
+192.168.0.6
+192.168.0.240
+
+[VirtualMachines:vars]
+ansible_python_interpreter=/usr/bin/python3
+
+[Whonix]
+10.152.152.10
+10.152.152.11
+
+[Physicals]
+192.168.0.32
+
+
+[Physicals:vars]
+ansible_python_interpreter=/usr/bin/python3

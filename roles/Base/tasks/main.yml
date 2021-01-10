@@ -1,0 +1,18 @@
+- block:
+  - import_tasks: apt.yml
+  - import_tasks: users/root.yml
+  - import_tasks: users/koopernic.yml
+
+  # Updating Ansible
+  - import_tasks: ansible_setup.yml
+  
+  # Install Software
+  - import_tasks: software/install_packages.yml
+  - import_tasks: software/remove_unwanted.yml
+  - import_tasks: software/repositories.yml
+  
+  # System setup
+  - import_tasks: system_setup/locale.yml
+  - import_tasks: system_setup/clock.yml
+  - import_tasks: system_setup/memory.yml
+  - import_tasks: system_setup/openssh.yml

@@ -1,0 +1,47 @@
+- name: Create Group
+  group:
+    name: koopernic
+    state: present
+
+- name: Create User
+  user:
+    name: koopernic
+    group: koopernic
+    groups: sudo,vboxusers,ifuse
+    state: present
+    shell: /bin/zsh
+
+- name: Add Sudoers file
+  copy:
+    src: sudoers_koopernic
+    dest: /etc/sudoers.d/koopernic
+    owner: root
+    group: root
+    mode: 0440
+
+- name: Create .ssh & Zsh directory
+  file:
+    path: /home/koopernic/{{ item.dir }}
+    state: directory
+    owner: koopernic
+    group: koopernic
+    mode: 0700
+  with_items:
+    - { dir: '.ssh' }
+    - { dir: '.zsh' }
+
+- name: Copy zshrc
+  file:
+    src: /files/zsh/.zshrc
+    dest: /home/koopernic/.zshrc
+    owner: koopernic
+    group: koopernic
+    mode: 0600
+
+- name: Copy GIT
+  file:
+    src: /files/git/.gitconfig
+    dest: /home/koopernic/.gitconfig
+    owner: koopernic
+    group: koopernic
+    mode: 0600
