@@ -1,4 +1,4 @@
-#Personal Ansible Desktop & VMs Configs
+# Personal Ansible Desktop & VMs Configs
 I use Ansible to configure my desktop, laptop, and VMs.
 
 ## Disclaimer
