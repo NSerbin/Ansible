@@ -4,12 +4,11 @@
   - import_tasks: users/koopernic.yml
   
   # Install Software
+  - import_tasks: software/repositories.yml
   - import_tasks: software/install_packages.yml
   - import_tasks: software/remove_unwanted.yml
-  - import_tasks: software/repositories.yml
   
   # System setup
   - import_tasks: system_setup/locale.yml
   - import_tasks: system_setup/clock.yml
   - import_tasks: system_setup/memory.yml
-  - import_tasks: system_setup/openssh.yml

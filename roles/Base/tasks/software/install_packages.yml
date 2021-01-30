@@ -3,7 +3,6 @@
     name: 
       - apt-transport-https
       - brave-browser
-      - chromium
       - curl
       - dolphin
       - gnupg

@@ -7,7 +7,7 @@
   user:
     name: koopernic
     group: koopernic
-    groups: sudo,vboxusers,ifuse
+    groups: sudo,vboxusers
     state: present
     shell: /bin/zsh
 
