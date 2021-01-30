@@ -16,6 +16,3 @@
       - wget
       - zsh
     state: latest
-    notify:
-      - Start MariaDB
-      - Start NTP 
