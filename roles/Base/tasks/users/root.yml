@@ -4,7 +4,7 @@
     password_lock: yes
 - name: Copy .zshrc
   copy:
-    src: /files/zsh/.zshrc
+    src: zsh/.zshrc
     dest: /root/.zshrc
     owner: root
     group: root

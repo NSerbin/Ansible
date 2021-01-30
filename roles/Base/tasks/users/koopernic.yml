@@ -31,16 +31,17 @@
     - { dir: '.zsh' }
 
 - name: Copy zshrc
-  file:
-    src: /files/zsh/.zshrc
+  copy:
+    src: zsh/.zshrc
     dest: /home/koopernic/.zshrc
     owner: koopernic
     group: koopernic
     mode: 0600
+   
 
 - name: Copy GIT
-  file:
-    src: /files/git/.gitconfig
+  copy:
+    src: git/.gitconfig
     dest: /home/koopernic/.gitconfig
     owner: koopernic
     group: koopernic
