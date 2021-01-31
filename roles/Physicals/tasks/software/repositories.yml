@@ -23,7 +23,4 @@
   apt_repository:
     repo: deb-src http://ppa.launchpad.net/gnumdk/lollypop/ubuntu bionic main 
     state: present
-- name: Add Lutris Repository
-  apt_repository:
-    repo: 'ppa:lutris-team/lutris'
-    state: present
+

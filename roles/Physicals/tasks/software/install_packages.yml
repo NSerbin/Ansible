@@ -21,15 +21,15 @@
 
 - name: Copy AES-ENCRYPT
   copy:
-    src: files/AESCrypt-GUI-3.tar.xz
-    dest: /home/Downloads
+    src: /home/koopernic/Projects/Ansible/roles/Physicals/tasks/software/AESCrypt-GUI-3.tar.xz
+    dest: /home/koopernic/Descargas
     owner: koopernic
     group: koopernic
     mode: 0755
 - name: Install AES-ENCRYPT
   unarchive:
     src: files/AESCrypt-GUI-3.tar.xz
-    dest: /home/Downloads
+    dest: /home/koopernic/Descargas
     remote_src: yes
     mode: 0755
     owner: koopernic
@@ -37,7 +37,7 @@
 - name: Install POSTMAN
   unarchive:
     src: https://dl.pstmn.io/download/latest/linux64
-    dest: /home/koopernic/Downloads
+    dest: /home/koopernic/Descargas
     remote_src: yes
     mode: 0755
     owner: koopernic

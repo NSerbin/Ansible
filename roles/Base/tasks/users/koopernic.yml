@@ -3,6 +3,11 @@
     name: koopernic
     state: present
 
+- name: Create VirtualBox Group
+  group:
+    name: vboxusers
+    state: present
+
 - name: Create User
   user:
     name: koopernic
