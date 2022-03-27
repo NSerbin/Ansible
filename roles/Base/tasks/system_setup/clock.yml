@@ -1,8 +1,0 @@
-- name: Install NTP Service
-  apt:
-    name: ntpdate
-    state: latest
-    
-- name: Set Time Zone
-  timezone: 
-    name: America/Argentina/Buenos_Aires  

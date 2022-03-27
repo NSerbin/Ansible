@@ -1,6 +1,0 @@
-- name: System Upgrade
-  apt:
-    update_cache: yes
-    upgrade : full
-    autoremove : yes
-    autoclean : yes
