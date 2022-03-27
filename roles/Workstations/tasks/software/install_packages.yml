@@ -6,7 +6,6 @@
       - bash-completion
       - bleachbit
       - bitwarden
-      - chromium
       - cmake
       - curl
       - docker
@@ -45,7 +44,7 @@
       - wget
       - zoom
     state: latest
-- name: Install Utilities
+- name: Install Snap Apps
   snap:
     name: 
       - brave-bin
@@ -55,6 +54,23 @@
       - node
       - slack
     state: latest
+- name: Install Python Packages
+  pip: 
+    name:
+      - beautifulsoup4
+      - boto3
+      - bs4
+      - colorama
+      - configparser
+      - investpy
+      - jc
+      - jinja2
+      - numpy
+      - pandas
+      - pre-commit
+      - requests
+      - Scrapy
+      - selenium    
 - name: Copy AES-ENCRYPT
   copy:
     src: /home/koopernic/Projects/Ansible/roles/Workstations/tasks/software/AESCrypt-GUI-3.tar.xz
