@@ -1,0 +1,11 @@
+- name: Check Account is locked
+  user:
+    name: root
+    password_lock: yes
+- name: Copy .zshrc
+  copy:
+    src: zsh/.zshrc
+    dest: /root/.zshrc
+    owner: root
+    group: root
+    mode: 0600

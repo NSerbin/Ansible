@@ -1,0 +1,10 @@
+---
+- name: Start MariaDB
+  service:
+    name: mariadb
+    state: started
+
+- name: Restart SSH
+  service:
+    name: sshd
+    state: restarted

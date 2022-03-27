@@ -1,0 +1,14 @@
+- block:
+  - import_tasks: apt.yml
+  - import_tasks: users/root.yml
+  - import_tasks: users/koopernic.yml
+  
+  # Install Software
+  - import_tasks: software/repositories.yml
+  - import_tasks: software/install_packages.yml
+  - import_tasks: software/remove_unwanted.yml
+  
+  # System setup
+  - import_tasks: system_setup/locale.yml
+  - import_tasks: system_setup/clock.yml
+  - import_tasks: system_setup/memory.yml

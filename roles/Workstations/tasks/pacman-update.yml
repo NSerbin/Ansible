@@ -1,0 +1,6 @@
+- name: System Upgrade
+  pacman:
+    update_cache: yes
+    upgrade : yes
+- name: Cleaning pacman cache pkgs
+  command: pacman -Scc

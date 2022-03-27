@@ -1,0 +1,14 @@
+- block:
+  ### Update & Upgrade System
+  - import_tasks: pacman.yml
+
+  ### Configure User Accounts
+  - import_tasks: users/root.yml
+  - import_tasks: users/koopernic.yml
+  
+  # Install Software
+  - import_tasks: software/install_packages.yml
+  - import_tasks: software/remove_unwanted.yml
+  
+  # System setup
+  - import_tasks: system_setup/settings.yml

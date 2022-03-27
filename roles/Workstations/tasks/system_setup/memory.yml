@@ -1,0 +1,13 @@
+- name: Adjust current Swappiness
+  tags: swappiness,sysctl,system,setup
+  lineinfile:
+    dest: "/etc/sysctl.conf"
+    create: yes
+    regexp: "swappiness ="
+    line: "vm.swappiness = 1"
+  register: swappiness
+
+#- name: Apply Swappiness
+#  tags: swappiness,sysctl,system,setup
+#  command: sysctl vm.swappiness= 1
+#  when: swappiness.changed
