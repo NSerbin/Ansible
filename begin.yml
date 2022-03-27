@@ -1,15 +1,10 @@
 # Run Roles
-- hosts: all
+- hosts: Workstations
   become: true
   roles:
-    - Base
+     - Workstations
 
-- hosts: Physicals
+- hosts: Rpi
   become: true
   roles:
-     - Physicals
-
-- hosts: Whonix
-  become: true
-  roles:
-     - Whonix
+     - Rpi

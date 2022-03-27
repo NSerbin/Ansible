@@ -1,18 +1,18 @@
-[VirtualMachines]
-192.168.0.6
-192.168.0.240
+#############################    Host   #############################
 
-[VirtualMachines:vars]
-ansible_python_interpreter=/usr/bin/python3
+[Rpi]
+192.168.1.108
 
-[Whonix]
-10.152.152.10
-10.152.152.11
-
-[Physicals]
-#192.168.0.32
-192.168.0.3
+[Workstations]
+192.168.1.103
+192.168.1.104
 localhost              ansible_connection=local
 
-[Physicals:vars]
+
+############################# Variables #############################
+
+[Workstations:vars]
+ansible_python_interpreter=/usr/bin/python3
+
+[Rpi:vars]
 ansible_python_interpreter=/usr/bin/python3
