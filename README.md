@@ -1,4 +1,4 @@
-# Personal Ansible Desktop & VMs Configs
+# Ansible Project for Workstation & Raspberry PI
 I use Ansible to configure my Workstations and Raspberry PI 4.
 
 ## Disclaimer
