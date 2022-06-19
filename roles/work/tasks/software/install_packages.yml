@@ -1,0 +1,3 @@
+- name: Download & Copy .zshrc
+  ansible.builtin.script:
+    cmd: curl https://raw.githubusercontent.com/NSerbin/Dotfiles/master/.zshrc -o /home/nserbin/.zshrc

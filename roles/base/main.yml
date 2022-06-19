@@ -1,0 +1,12 @@
+- block:
+  # Update System
+  - import_tasks: pacman-update.yml
+  # Install Software
+  - import_tasks: software/install_packages.yml
+  - import_tasks: software/install_others.yml
+  - import_tasks: software/remove_unwanted.yml
+  # System Setup
+  - import_tasks: system_setup/settings.yml
+  - import_tasks: system_setup/memory.yml
+  # Users Setup
+  - import_tasks: users/root.yml

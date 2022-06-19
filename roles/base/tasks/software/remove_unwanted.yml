@@ -1,0 +1,16 @@
+- name: Remove Unwanted Programs
+  community.general.pacman:
+    name:
+      - cups
+      - filelight
+      - gedit
+      - kget
+      - libreoffice
+      - manjaro-documentation-en
+      - partitionmanager
+      - steam-manjaro
+      - texteditor
+      - thunderbird
+      - virtualbox
+      - virtualbox-ext-vnc
+    state: absent

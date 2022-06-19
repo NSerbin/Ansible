@@ -1,0 +1,6 @@
+- name: Setting Pacman Mirror
+  ansible.builtin.command:
+    cmd: pacman-mirrors --country chile --api --protocols all --set-branch stable
+- name: Setting Time Zone
+  timezone:
+    name: America/Argentina/Buenos_Aires

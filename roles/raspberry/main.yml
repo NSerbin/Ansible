@@ -1,0 +1,7 @@
+- block:
+  # Update & Upgrade System
+  - import_tasks: apt.yml
+  # Configure User Accounts
+  - import_tasks: users/koopernic.yml
+  # Install Software
+  - import_tasks: software/install_packages.yml

@@ -1,0 +1,72 @@
+- name: Install Utilities
+  community.general.pacman:
+    name:
+      - autoconf
+      - automake
+      - bash-completion
+      - bitwarden
+      - cmake
+      - curl
+      - docker
+      - docker-compose
+      - exa
+      - extra-cmake-modules
+      - go
+      - gcc
+      - gnupg
+      - gnome-disk-utility
+      - htop
+      - jq
+      - kate
+      - kvantum-qt5
+      - latte-dock-git
+      - lightly-qt
+      - make
+      - mariadb
+      - python
+      - python-pip
+      - p7zip
+      - psutils
+      - ruby-rake
+      - shellcheck
+      - tldr
+      - ulauncher
+      - yay
+      - wget
+      - zoom
+    state: present
+- name: Install Snap Apps
+  community.general.snap:
+    name:
+      - brave-bin
+      - code
+      - flameshot
+      - node
+      - slack
+    options:
+      - node:classic
+      - code:classic
+    state: present
+- name: Install Python Packages
+  ansible.builtin.pip:
+    name:
+      - beautifulsoup4
+      - boto3
+      - bs4
+      - colorama
+      - configparser
+      - jc
+      - jinja2
+      - numpy
+      - pandas
+      - pre-commit
+      - requests
+      - Scrapy
+      - selenium
+      - yamllint
+- name: Install NodeJS Packages
+  community.general.npm:
+    name:
+      - serverless
+    global: true
+    state: present

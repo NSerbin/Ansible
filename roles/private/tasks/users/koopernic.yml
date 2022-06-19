@@ -1,0 +1,12 @@
+- name: Create Group
+  ansible.builtin.group:
+    name: koopernic
+    state: present
+
+- name: Create User
+  ansible.builtin.user:
+    name: koopernic
+    group: koopernic
+    groups: sudo, docker
+    state: present
+    shell: /bin/zsh

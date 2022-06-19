@@ -3,16 +3,9 @@
 [Rpi]
 192.168.1.108
 
-[Workstations]
-192.168.1.103
+[Work]
+192.168.1.111
+
+[Private]
 192.168.1.104
 localhost              ansible_connection=local
-
-
-############################# Variables #############################
-
-[Workstations:vars]
-ansible_python_interpreter=/usr/bin/python3
-
-[Rpi:vars]
-ansible_python_interpreter=/usr/bin/python3

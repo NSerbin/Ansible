@@ -1,10 +1,17 @@
 # Run Roles
-- hosts: Workstations
+- hosts: work
   become: true
   roles:
-     - Workstations
+     - work
+     - base
 
-- hosts: Rpi
+- hosts: raspberry
   become: true
   roles:
-     - Rpi
+     - raspberry
+
+- hosts: private
+  become: true
+  roles:
+     - base
+     - private

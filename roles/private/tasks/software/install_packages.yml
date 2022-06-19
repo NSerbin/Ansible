@@ -1,0 +1,38 @@
+- name: Install Utilities
+  community.general.pacman:
+    name:
+      - bleachbit
+      - discord
+      - gimp
+      - lollypop
+      - megasync-bin
+      - obs-studio
+      - okular
+      - telegram-desktop
+      - vlc
+    state: latest
+- name: Install Snap Apps
+  community.general.snap:
+    name:
+      - chromium
+    state: latest
+- name: Install Python Packages
+  ansible.builtin.pip:
+    name:
+      - ansible-lint
+      - faker
+      - investpy
+- name: Install AES-ENCRYPT
+  ansible.builtin.unarchive:
+    src: https://www.aescrypt.com/download/v3/linux/AESCrypt-GUI-3.11-Linux-x86_64-Install.gz
+    dest: /home/koopernic/Downloads
+    remote_src: true
+    mode: 0755
+    owner: koopernic
+    group: koopernic
+- name: Download & Copy .gitconfig
+  ansible.builtin.script:
+    cmd: curl https://raw.githubusercontent.com/NSerbin/Dotfiles/master/.gitconfig -o /home/koopernic/.gitconfig
+- name: Download & Copy .zshrc
+  ansible.builtin.script:
+    cmd: curl https://raw.githubusercontent.com/NSerbin/Dotfiles/master/.zshrc -o /home/koopernic/.zshrc

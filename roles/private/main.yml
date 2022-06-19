@@ -1,0 +1,5 @@
+- block:
+  # Install Software
+  - import_tasks: software/install_packages.yml
+  # Users Setup
+  - import_tasks: users/koopernic.yml

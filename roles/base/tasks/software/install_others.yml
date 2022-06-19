@@ -1,0 +1,15 @@
+- name: Install AWS Cli
+  ansible.builtin.script:
+    cmd: /files/installers/install-awscli.sh
+- name: Install Kubernetes & Addons
+  ansible.builtin.script:
+    cmd: /files/installers/install-k8s.sh
+- name: Install Terraform & Addons
+  ansible.builtin.script:
+    cmd: /files/installers/install-terraform.sh
+- name: Install Kubernetes & Addons
+  ansible.builtin.script:
+    cmd: /files/installers/install-k8s.sh
+- name: Install ZSH Theme & Addons
+  ansible.builtin.script:
+    cmd: /files/installers/install-zsh.sh

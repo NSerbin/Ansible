@@ -1,0 +1,5 @@
+- name: Set Swappiness
+  become: true
+  sysctl:
+    name: vm.swappiness
+    value: 1
