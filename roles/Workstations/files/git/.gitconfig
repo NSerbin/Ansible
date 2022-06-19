@@ -1,7 +1,0 @@
-[user]
-	name = Nicolas Serbin
-	email = nicolas.serbin@gmail.com
-[diff]
-	algorithm = histogram
-[credential]
-	helper = store
