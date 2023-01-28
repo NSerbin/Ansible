@@ -1,22 +1,32 @@
 #!/bin/bash
 
 function terraform-docs-install() {
-    [[ -f /usr/local/bin/terraform-docs ]] && echo "$(/usr/local/bin/terraform-docs version) already installed at /usr/local/bin/terraform-docs" && return 0
-    VERSION=$(curl -s https://api.github.com/repos/terraform-docs/terraform-docs/releases/latest | grep tag_name | cut -d: -f2 | tr -d \"\, | awk '{$1=$1};1')
-    wget https://terraform-docs.io/dl/"${VERSION}"/terraform-docs-"${VERSION}"-linux-amd64.tar.gz
-    (tar -xzf terraform-docs-"${VERSION}"-linux-amd64.tar.gz && chmod +x terraform-docs)
-    (mv terraform-docs /usr/local/bin/ && rm terraform-docs-"${VERSION}"-linux-amd64.tar.gz)
-
-    echo "Installed: $(/usr/local/bin/terraform-docs version)"
+  # Check if terraform-docs is installed
+  if ! command -v terraform-docs > /dev/null; then
+    echo "terraform-docs not found, installing..."
+    # Get the latest Release
+    wget $(curl -s https://api.github.com/repos/terraform-docs/terraform-docs/releases/latest | grep -o "https://.*terraform-docs_.*_linux_amd64.zip") -O terraform-docs.zip
+    # unzip and move binary to /usr/local/bin
+    unzip terraform-docs.zip && rm terraform-docs.zip
+    sudo mv terraform-docs /usr/local/bin
+    echo "Terraform successfully installed."
+  else
+    echo "terraform-docs already installed"
+  fi
 }
 
 function terraform-install() {
-  [[ -f /usr/local/bin/terraform ]] && echo "$(/usr/local/bin/terraform version) already installed at /usr/local/bin/terraform" && return 0
-  VERSION=$(curl -s https://api.github.com/repos/hashicorp/terraform/releases/latest | grep tag_name | cut -d: -f2 | tr -d \"\,\v | awk '{$1=$1};1')
-  wget https://releases.hashicorp.com/terraform/"${VERSION}"/terraform_"${VERSION}"_linux_amd64.zip
-  (unzip terraform_"${VERSION}"_linux_amd64.zip && mv terraform /usr/local/bin/ && rm terraform_"${VERSION}"_linux_amd64.zip) 
-  echo "Installed: $(/usr/local/bin/terraform version)"
-  
+  # Check if terraform is installed
+  if ! which terraform > /dev/null; then
+      echo "terraform-docs not found, installing..."
+      # Get the latest Release of Terraform
+      wget https://releases.hashicorp.com/terraform/latest/terraform_latest_linux_amd64.zip
+      unzip terraform_latest_linux_amd64.zip && rm terraform_latest_linux_amd64.zip
+      sudo mv terraform /usr/local/bin/
+      echo "Terraform successfully installed and added to PATH."
+  else
+      echo "Terraform is already installed."
+  fi
 }
 
 terraform-install
